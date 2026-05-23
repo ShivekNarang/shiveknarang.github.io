@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivek Narang — Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f9f8f6;
+    --surface: #ffffff;
+    --ink: #1c1c1e;
+    --ink-mid: #48484a;
+    --ink-faint: #8e8e93;
+    --accent: #1a3a5c;
+    --accent-warm: #c8b89a;
+    --rule: #e5e3de;
+    --hover: #f2f0eb;
+    --tag: #e8edf2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* PAGE LAYOUT */
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 3.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+  .header-name {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .header-role {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+  .header-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--tag);
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.25rem;
+  }
+
+  /* LINK ROW */
+  .link-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.12s;
+    border-radius: 3px;
+    margin: 0 -0.5rem;
+  }
+  .link-row:last-child { border-bottom: none; }
+  .link-row:hover { background: var(--hover); }
+
+  .link-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.93rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+  }
+  .link-row:hover .link-title { color: var(--accent); }
+
+  .link-right {
+    text-align: right;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+  }
+  .link-source {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .link-year {
+    font-size: 0.65rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .link-desc {
+    font-size: 0.78rem;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    margin-top: 0.2rem;
+    flex-basis: 100%;
+    padding-left: 0;
+  }
+
+  /* TWO-LINE LINK for items with descriptions */
+  .link-block {
+    display: block;
+    padding: 0.85rem 0.5rem;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.12s;
+    border-radius: 3px;
+    margin: 0 -0.5rem;
+  }
+  .link-block:last-child { border-bottom: none; }
+  .link-block:hover { background: var(--hover); }
+  .link-block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+  .link-block .link-title { font-size: 0.92rem; }
+  .link-block:hover .link-title { color: var(--accent); }
+  .link-block .link-desc { margin-top: 0.25rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  footer span, footer a {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width: 500px) {
+    .page { padding: 0 1rem 4rem; }
+    .header { padding: 2rem 0 1.5rem; }
+    .header-name { font-size: 1.6rem; }
+    .link-right { display: none; }
+  }
+
+  /* FADE IN */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section { animation: fadeIn 0.4s ease both; }
+  .section:nth-child(1)  { animation-delay: 0.03s; }
+  .section:nth-child(2)  { animation-delay: 0.06s; }
+  .section:nth-child(3)  { animation-delay: 0.09s; }
+  .section:nth-child(4)  { animation-delay: 0.12s; }
+  .section:nth-child(5)  { animation-delay: 0.15s; }
+  .section:nth-child(6)  { animation-delay: 0.18s; }
+  .section:nth-child(7)  { animation-delay: 0.21s; }
+  .section:nth-child(8)  { animation-delay: 0.24s; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-name">Shivek Narang</div>
+    <div class="header-role">Network Neuroscientist &nbsp;&middot;&nbsp; Fulbright Fellow &nbsp;&middot;&nbsp; Founder, ETR</div>
+    <span class="header-badge">Fulbright U.S. Student Award &rarr; NeuroRestore, EPFL/CHUV, Lausanne 2026&ndash;27</span>
+  </div>
+
+  <!-- FELLOWSHIPS & AWARDS -->
+  <div class="section">
+    <div class="section-label">Fellowships &amp; Awards</div>
+
+    <a class="link-block" href="https://penntoday.upenn.edu/news/penn-students-and-alumni-awarded-fulbright-2026-27-us-student-program-grants" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Fulbright U.S. Student Award</div>
+        <div class="link-right"><span class="link-source">Penn Today</span><span class="link-year">2026</span></div>
+      </div>
+      <div class="link-desc">NeuroRestore, EPFL/CHUV, Lausanne, Switzerland. Closed-loop adaptive DBS under Professor Courtine.</div>
+    </a>
+
+    <a class="link-block" href="https://www.seas.upenn.edu/stories/penn-students-and-alumni-awarded-fulbright-2026-27-u-s-student-program-grants/" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Fulbright Award &mdash; Penn Engineering Announcement</div>
+        <div class="link-right"><span class="link-source">Penn SEAS</span><span class="link-year">2026</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://penntoday.upenn.edu/news/penn-class-2025-presidents-engagement-innovation-and-sustainability-prize-winners-announced" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Penn President's Engagement Prize Finalist</div>
+        <div class="link-right"><span class="link-source">Penn Today</span><span class="link-year">2025</span></div>
+      </div>
+      <div class="link-desc">Named finalist for Empower Through Recovery among the Class of 2025.</div>
+    </a>
+
+    <a class="link-block" href="https://almanac.upenn.edu/volume-71-number-32" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Penn Almanac &mdash; President's Prize Announcement</div>
+        <div class="link-right"><span class="link-source">Penn Almanac</span><span class="link-year">2025</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://www.newswise.com/articles/penn-medicine-at-american-academy-of-neurology-annual-meeting-2024" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">AAN Annual Meeting Oral Presentation</div>
+        <div class="link-right"><span class="link-source">Penn Medicine</span><span class="link-year">2024</span></div>
+      </div>
+      <div class="link-desc">Remote Network Effects of Post-traumatic Lesions and Risk of Post-traumatic Epilepsy. Denver, CO. Sigma Xi IFoRE Best Undergraduate Engineering Research Award.</div>
+    </a>
+
+    <a class="link-block" href="https://www.mindyourbrainfoundation.org/grants-fellowships/" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Mind Your Brain Foundation Research Fellow</div>
+        <div class="link-right"><span class="link-source">MYBF</span><span class="link-year">2024</span></div>
+      </div>
+      <div class="link-desc">One of three fellows selected nationally. $2,500 research award.</div>
+    </a>
+
+    <a class="link-block" href="https://casi.sas.upenn.edu/studentprograms/2024winners" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">CASI Research Fellowship &mdash; Aravind Eye Hospital, India</div>
+        <div class="link-right"><span class="link-source">Penn CASI</span><span class="link-year">2024</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section">
+    <div class="section-label">Publications</div>
+
+    <a class="link-block" href="https://www.newswise.com/articles/penn-medicine-at-american-academy-of-neurology-annual-meeting-2024" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Functional Connectivity Mapping of TBI Lesions and Post-Traumatic Epilepsy Risk</div>
+        <div class="link-right"><span class="link-source">NeuroImage: Clinical</span><span class="link-year">Submitted</span></div>
+      </div>
+      <div class="link-desc">Narang S et al. First-author manuscript. medRxiv preprint forthcoming.</div>
+    </a>
+
+    <a class="link-block" href="https://www.sciencedirect.com/science/article/pii/S2213158226000628" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Contusions Bias Cortical Thickness Estimates After TBI: A TRACK-TBI Study</div>
+        <div class="link-right"><span class="link-source">NeuroImage: Clinical</span><span class="link-year">2026</span></div>
+      </div>
+      <div class="link-desc">Gugger JJ, Narang S et al.</div>
+    </a>
+
+    <a class="link-block" href="https://pubmed.ncbi.nlm.nih.gov/36441570/" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Same-Day vs Staged Fusion Surgery in Adult Spinal Deformity: Protocol for a Systematic Review</div>
+        <div class="link-right"><span class="link-source">JMIR</span><span class="link-year">2022</span></div>
+      </div>
+      <div class="link-desc">Dagli MM, Narang S et al. PMID 36441570. PMC9745645.</div>
+    </a>
+
+    <a class="link-block" href="https://pubmed.ncbi.nlm.nih.gov/33991523/" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Non-invasive, Neurotoxic Surgery Reduces Seizures in a Rat Model of Temporal Lobe Epilepsy</div>
+        <div class="link-right"><span class="link-source">Experimental Neurology</span><span class="link-year">2021</span></div>
+      </div>
+      <div class="link-desc">Zhang et al. Contributing author. Wintermark Lab, Stanford. PMID 33991523.</div>
+    </a>
+  </div>
+
+  <!-- RESEARCH PROFILES -->
+  <div class="section">
+    <div class="section-label">Research Profiles</div>
+    <a class="link-row" href="https://scholar.google.com/citations?user=TTKUw0MAAAAJ&hl=en" target="_blank">
+      <div class="link-title">Google Scholar</div>
+      <div class="link-right"><span class="link-source">scholar.google.com</span></div>
+    </a>
+    <a class="link-row" href="https://pubmed.ncbi.nlm.nih.gov/?term=Narang+Shivek" target="_blank">
+      <div class="link-title">PubMed</div>
+      <div class="link-right"><span class="link-source">pubmed.ncbi.nlm.nih.gov</span></div>
+    </a>
+    <a class="link-row" href="https://orcid.org/0000-0002-5051-5622" target="_blank">
+      <div class="link-title">ORCID &mdash; 0000-0002-5051-5622</div>
+      <div class="link-right"><span class="link-source">orcid.org</span></div>
+    </a>
+    <a class="link-row" href="https://www.researchgate.net/profile/Shivek_Narang" target="_blank">
+      <div class="link-title">ResearchGate</div>
+      <div class="link-right"><span class="link-source">researchgate.net</span></div>
+    </a>
+    <a class="link-row" href="https://www.scopus.com/authid/detail.uri?authorId=57223922072" target="_blank">
+      <div class="link-title">Scopus</div>
+      <div class="link-right"><span class="link-source">scopus.com</span></div>
+    </a>
+  </div>
+
+  <!-- RESEARCH PRESENTATIONS -->
+  <div class="section">
+    <div class="section-label">Research Presentations &amp; Posters</div>
+
+    <a class="link-block" href="https://presentations.curf.upenn.edu/poster/correlating-effect-size-and-location-tbi-induced-lesions-likelihood-developing-epilepsy" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">TBI Lesion-Network Mapping Poster</div>
+        <div class="link-right"><span class="link-source">Penn CURF</span><span class="link-year">2023</span></div>
+      </div>
+      <div class="link-desc">Correlating the Effect of Size and Location of TBI-Induced Lesions on the Likelihood of Developing Epilepsy through Functional Connectivity Mapping.</div>
+    </a>
+
+    <a class="link-block" href="https://www.youtube.com/watch?v=Go5vWzBDIqs&list=PLxsU_Sq6IjgfG9yHSqgeMN0nZ14eILKih&index=1&t=1455s" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Rockefeller SSRP &mdash; Amyloid-Beta Aggregation in Alzheimer's</div>
+        <div class="link-right"><span class="link-source">AMNH / YouTube</span><span class="link-year">2020</span></div>
+      </div>
+      <div class="link-desc">American Museum of Natural History presentation. Rockefeller University Summer Science Research Program.</div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1Grs5kM_XH1KVaSQjgs1A4mRiWkNxj4z-/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Stanford Cherry Lab &mdash; ENCODE Genome Conservation Analysis</div>
+        <div class="link-right"><span class="link-source">Google Drive</span></div>
+      </div>
+      <div class="link-desc">Analyzed conservation-associated activity scores across ChIP-seq and DNase-seq datasets for the ENCODE consortium reference epigenome.</div>
+    </a>
+
+    <a class="link-block" href="https://www.youtube.com/watch?v=LDkXaJe9KYk" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Novel Mutations and Protein Structure in Neurological Disease</div>
+        <div class="link-right"><span class="link-source">YouTube</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- FOUNDATION & COMMUNITY -->
+  <div class="section">
+    <div class="section-label">Foundation &amp; Community</div>
+
+    <a class="link-block" href="https://synaptogenesisfoundation.org" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Synaptogenesis Foundation</div>
+        <div class="link-right"><span class="link-source">synaptogenesisfoundation.org</span></div>
+      </div>
+      <div class="link-desc">Parent organisation for Empower Through Recovery, Our Teen Brains, and the Global Neurorecovery Dialogue Series.</div>
+    </a>
+
+    <a class="link-block" href="https://empowerthroughrecovery.org" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Empower Through Recovery</div>
+        <div class="link-right"><span class="link-source">empowerthroughrecovery.org</span></div>
+      </div>
+      <div class="link-desc">501(c)(3) supporting acquired brain injury survivors through peer mentorship, vocational reintegration, and longitudinal wellbeing tracking.</div>
+    </a>
+
+    <a class="link-block" href="https://open.spotify.com/show/4kVGiPWI3fmGqPsGvyXWxN" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Global Neurorecovery Dialogue Series</div>
+        <div class="link-right"><span class="link-source">Spotify</span></div>
+      </div>
+      <div class="link-desc">Conversations with Dr. David Fischer (Penn RECOVER), Dr. Matthew Jaffa, Candace Gantt, Jake Wilson, Kristen Wilson RN, and others at the frontier of TBI care.</div>
+    </a>
+
+    <a class="link-block" href="https://ourteenbrains.com" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Our Teen Brains</div>
+        <div class="link-right"><span class="link-source">ourteenbrains.com</span></div>
+      </div>
+      <div class="link-desc">Nonprofit spreading awareness about adolescent brain development. 4,000+ students reached. Keynote address to 2,000+ audience.</div>
+    </a>
+
+    <a class="link-block" href="https://www.bayareasfnyouth.org" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Bay Area Society for Neuroscience &mdash; Youth Chapter</div>
+        <div class="link-right"><span class="link-source">bayareasfnyouth.org</span></div>
+      </div>
+      <div class="link-desc">President. 50+ events, 70+ members across 27 Bay Area schools. Brain dissection events for 100+ attendees at Bay Area libraries.</div>
+    </a>
+
+    <a class="link-block" href="https://nutritionnow.org" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">NutritionNow</div>
+        <div class="link-right"><span class="link-source">nutritionnow.org</span></div>
+      </div>
+      <div class="link-desc">Nonprofit combating food insecurity. Raised $3,000+ for Feeding America. Co-founded to support mothers, children, and seniors in underserved communities.</div>
+    </a>
+  </div>
+
+  <!-- OUR TEEN BRAINS MEDIA -->
+  <div class="section">
+    <div class="section-label">Our Teen Brains &mdash; Media &amp; Press</div>
+
+    <a class="link-row" href="https://ourteenbrains.com/media-coverage/interviewed-and-featured-in-tri-city-voice-magazine-february-11-2020/" target="_blank">
+      <div class="link-title">Tri-City Voice Feature</div>
+      <div class="link-right"><span class="link-source">Tri-City Voice</span><span class="link-year">Feb 2020</span></div>
+    </a>
+
+    <a class="link-row" href="http://voyagela.com/interview/meet-shivek-narang-teen-brains-fremont-ca/" target="_blank">
+      <div class="link-title">VoyageLA &mdash; Meet Shivek Narang of Our Teen Brains in Fremont</div>
+      <div class="link-right"><span class="link-source">VoyageLA</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://ourteenbrains.com/media-coverage/selected-as-a-davidson-ambassador-for-my-community-service-project-our-teen-brains/" target="_blank">
+      <div class="link-title">Davidson Ambassador &mdash; Our Teen Brains</div>
+      <div class="link-right"><span class="link-source">Davidson Institute</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://ourteenbrains.com/media-coverage/tri-city-voice/" target="_blank">
+      <div class="link-title">World Science Scholar Newsletter Feature</div>
+      <div class="link-right"><span class="link-source">World Science Scholars</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://ourteenbrains.com/media-coverage/featured-in-a-podcast-teen-brains-mental-health-and-black-lives-matter/" target="_blank">
+      <div class="link-title">Podcast &mdash; Teen Brains, Mental Health and Black Lives Matter</div>
+      <div class="link-right"><span class="link-source">ourteenbrains.com</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://ourteenbrains.com/media-coverage/our-teen-brains-is-a-social-emotional-development-resource-as-part-of-american-school-counselors-association-asca-toolkit/" target="_blank">
+      <div class="link-title">ASCA Toolkit &mdash; Social/Emotional Development Resource</div>
+      <div class="link-right"><span class="link-source">ASCA</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.pixeljournal.org/stories-blog/2021/5/24/shivek-narang-our-teen-brains" target="_blank">
+      <div class="link-title">Pixel Journal Feature &mdash; Our Teen Brains</div>
+      <div class="link-right"><span class="link-source">Pixel Journal</span><span class="link-year">2021</span></div>
+    </a>
+  </div>
+
+  <!-- OUR TEEN BRAINS PODCAST & VIDEO -->
+  <div class="section">
+    <div class="section-label">Our Teen Brains &mdash; Podcast &amp; Video</div>
+
+    <a class="link-row" href="https://open.spotify.com/show/6GTlHGhKFDVKmE7GnroWBT" target="_blank">
+      <div class="link-title">Our Teen Brains with Shivek &mdash; Spotify</div>
+      <div class="link-right"><span class="link-source">Spotify</span></div>
+    </a>
+
+    <a class="link-row" href="https://podcasts.apple.com/gb/podcast/our-teen-brains-with-shivek/id1522304253" target="_blank">
+      <div class="link-title">Our Teen Brains with Shivek &mdash; Apple Podcasts</div>
+      <div class="link-right"><span class="link-source">Apple Podcasts</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.listennotes.com/podcasts/our-teen-brains-with-shivek-shivek-narang-eBDhocdZrX5/" target="_blank">
+      <div class="link-title">Our Teen Brains with Shivek &mdash; Full Episode Archive</div>
+      <div class="link-right"><span class="link-source">Listen Notes</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.youtube.com/watch?v=O_oeJy2OgCo&list=PLxsU_Sq6IjgeIhV6G2z4k-b34MDLtFHLl" target="_blank">
+      <div class="link-title">Our Teen Brains &mdash; YouTube Channel</div>
+      <div class="link-right"><span class="link-source">YouTube</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.youtube.com/watch?v=vyTeLXmHPBY" target="_blank">
+      <div class="link-title">Our Teen Brains &mdash; The Purpose of My Organization</div>
+      <div class="link-right"><span class="link-source">YouTube</span><span class="link-year">2019</span></div>
+    </a>
+  </div>
+
+  <!-- PENN RECOGNITION -->
+  <div class="section">
+    <div class="section-label">Penn &amp; Academic Recognition</div>
+
+    <a class="link-row" href="https://curf.upenn.edu/sites/default/files/2023-09/CURF%20Research%20Expo%202023%20Program.pdf" target="_blank">
+      <div class="link-title">Penn CURF Research Expo 2023</div>
+      <div class="link-right"><span class="link-source">Penn CURF</span><span class="link-year">2023</span></div>
+    </a>
+
+    <a class="link-row" href="https://curf.upenn.edu/sites/default/files/2024-09/CURF%20Research%20Expo%202024%20Program_0.pdf" target="_blank">
+      <div class="link-title">Penn CURF Research Expo 2024</div>
+      <div class="link-right"><span class="link-source">Penn CURF</span><span class="link-year">2024</span></div>
+    </a>
+
+    <a class="link-row" href="https://aravind.org/aravindnews/17664/" target="_blank">
+      <div class="link-title">Aravind Eye Care Fellowship Feature</div>
+      <div class="link-right"><span class="link-source">Aravind Eye Care</span><span class="link-year">2024</span></div>
+    </a>
+
+    <a class="link-row" href="https://casistudentprograms.wordpress.com/2024/07/16/eye-camps-vision-centers-tertiary-hospitals-and-everything-in-between-the-incredible-world-of-eye-care-at-aravind/" target="_blank">
+      <div class="link-title">Eye Camps, Vision Centers, Tertiary Hospitals &mdash; CASI Blog</div>
+      <div class="link-right"><span class="link-source">CASI Blog</span><span class="link-year">2024</span></div>
+    </a>
+  </div>
+
+  <!-- HIGH SCHOOL -->
+  <div class="section">
+    <div class="section-label">High School Awards &amp; Research</div>
+
+    <a class="link-row" href="https://csef.usc.edu/History/2016/pictures/Portrait/41819.html" target="_blank">
+      <div class="link-title">California State Science Fair 2016 &mdash; Grade 7</div>
+      <div class="link-right"><span class="link-source">CSEF / USC</span><span class="link-year">2016</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.biotechinstitute.org/biogeneius" target="_blank">
+      <div class="link-title">BioGENEius National Finalist</div>
+      <div class="link-right"><span class="link-source">Biotechnology Institute</span><span class="link-year">2019, 2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.worldsciencescholars.org" target="_blank">
+      <div class="link-title">World Science Scholar</div>
+      <div class="link-right"><span class="link-source">World Science Foundation</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">National Merit Scholar &mdash; $2,500 Award</div>
+      <div class="link-right"><span class="link-source">NMSC</span><span class="link-year">2021</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">Davidson Ambassador &mdash; 1 of 12 selected nationally</div>
+      <div class="link-right"><span class="link-source">Davidson Institute</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">JSHS National Alternate &mdash; Northern California Project ranked 6th</div>
+      <div class="link-right"><span class="link-source">JSHS</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">SCVSEFA First Place in Molecular Biology &mdash; ACS Award</div>
+      <div class="link-right"><span class="link-source">SCVSEFA</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">National Latin Examination &mdash; Gold Medal, Summa Cum Laude</div>
+      <div class="link-right"><span class="link-source">NLE</span><span class="link-year">2015&ndash;2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">MathWorks M3 Challenge &mdash; Top 19% Worldwide</div>
+      <div class="link-right"><span class="link-source">MathWorks</span><span class="link-year">2020</span></div>
+    </a>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">Julian C. Stanley Study of Exceptional Talent (SET)</div>
+      <div class="link-right"><span class="link-source">Johns Hopkins CTY</span></div>
+    </a>
+  </div>
+
+  <!-- INNOVATION & PROJECTS -->
+  <div class="section">
+    <div class="section-label">Innovation &amp; Projects</div>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1vLh_c45MhvOnqPMs8mdNp1h3_S2_y-lS/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">GlucaLink &mdash; Mobile Prenatal Diabetes Tracking</div>
+        <div class="link-right"><span class="link-source">Demo</span></div>
+      </div>
+      <div class="link-desc">AI-assisted platform bridging gestational diabetes patient monitoring and physician visibility between appointments.</div>
+    </a>
+
+    <a class="link-block" href="https://docs.google.com/presentation/d/1qqB6O0noeZ2En1dnmyMMBa7HHCuSQLp_/edit?slide=id.p1#slide=id.p1" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">OxyTransplant &mdash; Passive Oxygenation Device for Organ Transport</div>
+        <div class="link-right"><span class="link-source">Slide Deck</span></div>
+      </div>
+      <div class="link-desc">Medical device addressing ischemic injury during organ transport. Stakeholder interviews with transplant surgeons. Manuscript in preparation.</div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1bN2cCpJVd7Ej8sP7A7s1AkPSl5mHfdjS/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Post-TBI Epilepsy Risk Prediction Models</div>
+        <div class="link-right"><span class="link-source">Report</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1fnk0CmosPpF4xswf8B8PLEFqmbSn1quo/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Digital Health &amp; Big Tech &mdash; Apple, Google, Amazon Strategy Analysis</div>
+        <div class="link-right"><span class="link-source">Slide Deck</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/17gndojDsl4QnA-AI5hoY9fwK_7IyWXLn/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Crush'n Flush &mdash; Medication Delivery for Enteral Patients</div>
+        <div class="link-right"><span class="link-source">Pitch Deck</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1ggcr6vqg6UlnnGTUUpImaLm3jd3v-ItT/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Credit Fraud Detection &mdash; ML Models for Secure Transactions</div>
+        <div class="link-right"><span class="link-source">Project</span></div>
+      </div>
+    </a>
+
+    <a class="link-block" href="https://drive.google.com/file/d/1JAhR4TB8VxJcEN-Hty6OOBgcKc_H5HyA/view" target="_blank">
+      <div class="link-block-head">
+        <div class="link-title">Primate Phylogenetics &mdash; mtDNA Evolutionary Analysis of Baboons</div>
+        <div class="link-right"><span class="link-source">Analysis</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- WRITING -->
+  <div class="section">
+    <div class="section-label">Writing</div>
+
+    <a class="link-row" href="https://medium.com/@mrshiveknarang" target="_blank">
+      <div class="link-title">Medium &mdash; @mrshiveknarang</div>
+      <div class="link-right"><span class="link-source">medium.com</span></div>
+    </a>
+
+    <a class="link-row" href="https://medium.com/@mrshiveknarang/choosing-where-to-seek-health-care-is-a-significant-decision-for-patients-and-is-dependent-on-many-974aaa79b1d7" target="_blank">
+      <div class="link-title">Yelp Sentiment Analysis &mdash; Predicting Healthcare Satisfaction</div>
+      <div class="link-right"><span class="link-source">Medium</span></div>
+    </a>
+
+    <a class="link-row" href="https://medium.com/@mrshiveknarang/6-stage-synthesis-of-1-bromo-3-chloro-5-iodobenzene-from-aniline-53ae188f14a6" target="_blank">
+      <div class="link-title">6-Stage Synthesis of 1-Bromo-3-Chloro-5-Iodobenzene from Aniline</div>
+      <div class="link-right"><span class="link-source">Medium</span></div>
+    </a>
+  </div>
+
+  <!-- PROFILES -->
+  <div class="section">
+    <div class="section-label">Profiles &amp; Contact</div>
+
+    <a class="link-row" href="https://shiveknarang.github.io" target="_blank">
+      <div class="link-title">Personal Website</div>
+      <div class="link-right"><span class="link-source">shiveknarang.github.io</span></div>
+    </a>
+
+    <a class="link-row" href="https://www.linkedin.com/in/shiveknarang" target="_blank">
+      <div class="link-title">LinkedIn</div>
+      <div class="link-right"><span class="link-source">linkedin.com/in/shiveknarang</span></div>
+    </a>
+
+    <a class="link-row" href="mailto:shivekn@alumni.upenn.edu">
+      <div class="link-title">Email</div>
+      <div class="link-right"><span class="link-source">shivekn@alumni.upenn.edu</span></div>
+    </a>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Shivek Narang</span>
+    <a href="https://shiveknarang.github.io">shiveknarang.github.io</a>
+  </footer>
+
+</div>
+</body>
+</html>
