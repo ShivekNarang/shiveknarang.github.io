@@ -115,7 +115,6 @@
     color: rgba(255,255,255,0.6);
     margin-bottom: 0.6rem;
   }
-  .fulbright-badge:hover { background: var(--accent-light); }
 
   .bio {
     font-size: 0.95rem;
@@ -184,6 +183,29 @@
     transition: border-color 0.2s;
   }
   .project-link:hover { border-color: var(--accent); }
+
+  /* CLINICAL LIST — same style as project-list but no descriptions */
+  .clinical-list { list-style: none; }
+  .clinical-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .clinical-list li:last-child { border-bottom: none; }
+  .clinical-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .clinical-role {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 
   /* PUBLICATIONS */
   .pub-list { list-style: none; }
@@ -334,6 +356,8 @@
     .project-meta { text-align: left; }
     nav { padding: 0.6rem 1rem; }
     .container { padding: 2rem 1.2rem 4rem; }
+    .clinical-list li { flex-direction: column; gap: 0.2rem; }
+    .clinical-role { white-space: normal; }
   }
 
   /* ANIMATIONS */
@@ -452,6 +476,7 @@
 <nav>
   <span class="name">Shivek Narang</span>
   <ul>
+    <li><a href="#clinical">Clinical</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#dialogue">Podcast</a></li>
@@ -468,13 +493,15 @@
     <div class="header-top">
       <img src="https://shiveknarang.github.io/images/Shivek Profile Picture.jpg" alt="Shivek Narang">
       <div>
-        <p class="title-line">Fulbright Fellow &nbsp;|&nbsp; TBI Network Neuroscience &nbsp;|&nbsp; Founder, Empower Through Recovery</p>
+        <p class="title-line">Fulbright Fellow &nbsp;|&nbsp; Neuroscientist &nbsp;|&nbsp; Bioengineer &nbsp;|&nbsp; Recovery Advocate</p>
         <h1>Shivek Narang</h1>
-        </div>
+      </div>
     </div>
 
     <p class="bio">
-      Shivek Narang is a <strong>Fulbright U.S. Student Fellow</strong> and network neuroscientist. He holds an <strong>MSE in Bioengineering</strong> and a <strong>BA in Neuroscience with Distinction and Cognitive Science</strong>, Magna Cum Laude, from the University of Pennsylvania. His research uses lesion-network connectivity mapping, resting-state fMRI, and intracranial sEEG graph models to develop biomarkers of post-traumatic epilepsy risk and cognitive recovery trajectory after TBI. He is the founder of <strong>Empower Through Recovery</strong>, a 501(c)(3) at the <strong>Synaptogenesis Foundation</strong> serving acquired brain injury survivors through peer mentorship, vocational reintegration, and longitudinal wellbeing tracking.
+      Shivek Narang is a <strong>Fulbright U.S. Student Fellow</strong> whose work bridges neuroscience, bioengineering, and recovery after neurological injury. He holds an <strong>MSE in Bioengineering</strong> and a <strong>BA in Neuroscience and Cognitive Science</strong>, Magna Cum Laude, from the University of Pennsylvania.<br><br>
+      His research uses lesion-network connectivity mapping, resting-state fMRI, and intracranial sEEG graph models to understand why patients with similar injuries can experience different outcomes. Across research, clinical, and community settings, he is interested in how clinicians can better recognize invisible deficits, guide patients through uncertainty, and improve long-term outcomes after serious neurological illness.<br><br>
+      He is the founder of <strong>Empower Through Recovery</strong>, a 501(c)(3) supporting acquired brain injury survivors through peer mentorship, community reintegration, and recovery-focused community programming.
     </p>
 
     <div class="links-row">
@@ -490,13 +517,50 @@
     </div>
   </header>
 
+  <!-- CLINICAL CARE & RECOVERY — new section -->
+  <section id="clinical">
+    <h2>Clinical Care &amp; Recovery</h2>
+    <ul class="clinical-list">
+      <li>
+        <span class="clinical-name">Penn Presbyterian Medical Center</span>
+        <span class="clinical-role">Neuro/Trauma ICU and Addiction Care Team</span>
+      </li>
+      <li>
+        <span class="clinical-name">Halpern Functional Neurosurgery Clinic, Penn Medicine</span>
+        <span class="clinical-role">Clinical Fellow, DBS Clinic and OR</span>
+      </li>
+      <li>
+        <span class="clinical-name">Aravind Eye Hospital, Madurai, India</span>
+        <span class="clinical-role">CASI Research Fellow, Neuro-Ophthalmology</span>
+      </li>
+      <li>
+        <span class="clinical-name">Washington Hospital Healthcare System</span>
+        <span class="clinical-role">Clinical Care Coordinator and Medical Scribe</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- FOUNDATION & COMMUNITY — moved up -->
+  <section id="foundation">
+    <h2>Foundation &amp; Community</h2>
+    <ul class="project-list">
+      <li>
+        <div class="project-name">Synaptogenesis Foundation &mdash; Founder</div>
+        <div class="project-meta">2020 &ndash; Present</div>
+        <div class="project-desc">501(c)(3) parent organization housing three initiatives: <strong>Empower Through Recovery</strong>, supporting acquired brain injury survivors through peer mentorship, recovery support groups, and community reintegration; the <strong>Global Neurorecovery Dialogue Series</strong>, bringing together survivors, caregivers, clinicians, and researchers to explore life after neurological injury; and <strong>Our Teen Brains</strong>, delivering accessible neuroscience education on adolescent brain development and mental health to 4,000+ students.</div>
+        <a class="project-link" href="https://synaptogenesisfoundation.org" target="_blank">synaptogenesisfoundation.org &rarr;</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- RESEARCH -->
   <section id="research">
-    <h2>Current &amp; Recent Work</h2>
+    <h2>Current &amp; Recent Research</h2>
     <ul class="project-list">
       <li>
         <div class="project-name">NeuroRestore, EPFL/CHUV &mdash; Fulbright Research Fellow</div>
         <div class="project-meta">Aug 2026 &ndash; Jul 2027</div>
-        <div class="project-desc">Closed-loop adaptive deep brain stimulation for Parkinson's disease under Professor Gr&eacute;goire Courtine and Professor Jocelyne Bloch. Partnership with Medtronic. Sensing-enabled DBS devices, machine learning biomarker identification, wearable sensor monitoring for gait restoration. Professors Courtine and Bloch received the Queen Elisabeth Prize for Engineering 2026.</div>
+        <div class="project-desc">Closed-loop adaptive deep brain stimulation for Parkinson&rsquo;s disease under Professor Gr&eacute;goire Courtine and Professor Jocelyne Bloch. Partnership with Medtronic. Sensing-enabled DBS devices, machine learning biomarker identification, wearable sensor monitoring for gait restoration. Professors Courtine and Bloch received the Queen Elisabeth Prize for Engineering 2026.</div>
         <a class="project-link" href="https://www.neurorestore.swiss" target="_blank">neurorestore.swiss &rarr;</a>
       </li>
       <li>
@@ -510,18 +574,6 @@
         <div class="project-meta">2023 &ndash; 2026</div>
         <div class="project-desc">Lesion-network connectivity mapping in the TRACK-TBI cohort. Limbic network disruption outperforms lesion anatomy as a predictor of post-traumatic epilepsy. AAN Annual Meeting oral presentation, Denver 2024. First-author manuscript submitted to NeuroImage: Clinical. NIH/NINDS K23NS135101. Sigma Xi IFoRE Best Undergraduate Engineering Research Award 2024.</div>
         <a class="project-link" href="https://www.newswise.com/articles/penn-medicine-at-american-academy-of-neurology-annual-meeting-2024" target="_blank">AAN 2024 Coverage &rarr;</a>
-      </li>
-      <li>
-        <div class="project-name">Empower Through Recovery &mdash; Founder &amp; Executive Director</div>
-        <div class="project-meta">2023 &ndash; Present</div>
-        <div class="project-desc">501(c)(3) nonprofit supporting acquired brain injury survivors navigating the post-acute period after clinical rehabilitation ends. 35+ survivors served through Stanford Synapse and Santa Clara Valley Medical Center. Global Neurorecovery Dialogue Series: published conversations with Dr. David Fischer (Penn RECOVER Program), Dr. Matthew Jaffa, and Candace Gantt. Penn President's Engagement Prize Finalist 2025.</div>
-        <a class="project-link" href="https://empowerthroughrecovery.org" target="_blank">empowerthroughrecovery.org &rarr;</a>
-      </li>
-      <li>
-        <div class="project-name">Aravind Eye Hospital, Madurai &mdash; CASI Research Fellow</div>
-        <div class="project-meta">Summer 2024</div>
-        <div class="project-desc">694 hours. Follow-up adherence study across 1,200 patients in neuro-ophthalmology. Finding: limited patient understanding of their own condition was the strongest independent predictor of non-return, regardless of distance or cost. Redesigned follow-up monitoring framework now in use. Follow-up study underway with Dr. Mahesh Kumar.</div>
-        <a class="project-link" href="https://casi.sas.upenn.edu/studentprograms/2024winners" target="_blank">CASI 2024 Award &rarr;</a>
       </li>
       <li>
         <div class="project-name">Halpern Lab, Penn Functional Neurosurgery</div>
@@ -538,9 +590,10 @@
     </ul>
   </section>
 
+  <!-- DIALOGUE SERIES -->
   <section id="dialogue">
     <h2>Global Neurorecovery Dialogue Series</h2>
-    <p style="font-size:0.88rem;color:var(--ink-light);margin-bottom:1.2rem;line-height:1.7;">Conversations at the frontier of brain injury science and recovery &mdash; with researchers, clinicians, and survivors shaping how the field thinks about neurorecovery, rehabilitation, and community reintegration.</p>
+    <p style="font-size:0.88rem;color:var(--ink-light);margin-bottom:1.2rem;line-height:1.7;">Conversations with survivors, caregivers, clinicians, and researchers exploring life after neurological injury and the challenges of long-term recovery.</p>
     <div class="episode-grid">
       <a class="episode-card" href="https://synaptogenesisfoundation.org/episodes/episode-1.html" target="_blank">
         <div class="ep-num">Ep. 1</div>
@@ -588,57 +641,39 @@
     <div style="margin-top:1rem;text-align:center;">
       <a href="https://synaptogenesisfoundation.org/dialogue-series.html" target="_blank" style="font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;">View full series at synaptogenesisfoundation.org &rarr;</a>
     </div>
+    <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);">
+      <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.6rem;">Also from Synaptogenesis Foundation</p>
+      <a href="https://open.spotify.com/show/6GTlHGhKFDVKmE7GnroWBT" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;font-weight:500;color:var(--ink);text-decoration:none;padding:0.5rem 0.8rem;border:1px solid var(--rule);border-radius:4px;background:var(--warm);transition:all 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)'">
+        <span style="font-size:0.9rem;">&#127911;</span>
+        <span><strong>Our Teen Brains Podcast</strong> &mdash; Adolescent brain health, mental wellness, and neuroscience education</span>
+        <span style="font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#1DB954;margin-left:0.3rem;">Spotify &rarr;</span>
+      </a>
+    </div>
   </section>
 
+  <!-- PUBLICATIONS — reordered, spinal deformity last -->
   <section id="publications">
     <h2>Publications</h2>
     <ul class="pub-list">
       <li>
         <span class="pub-num">1.</span>
         <div class="pub-content">
-          <div class="pub-title">Functional connectivity mapping of TBI lesions and post-traumatic epilepsy risk</div>
-          <div class="pub-details">Narang S et al. &mdash; NeuroImage: Clinical (submitted) &mdash; medRxiv preprint forthcoming</div>
+          <div class="pub-title">Non-invasive, neurotoxic surgery reduces seizures in a rat model of temporal lobe epilepsy</div>
+          <div class="pub-details">Zhang et al. (contributing author) &mdash; Experimental Neurology &mdash; 2021</div>
           <div class="pub-links">
-            <a href="https://www.newswise.com/articles/penn-medicine-at-american-academy-of-neurology-annual-meeting-2024" target="_blank">AAN 2024</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33991523/" target="_blank">PubMed</a>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0014488621001679" target="_blank">ScienceDirect</a>
           </div>
         </div>
       </li>
       <li>
         <span class="pub-num">2.</span>
         <div class="pub-content">
-          <div class="pub-title">Contusions Bias Cortical Thickness Estimates After Traumatic Brain Injury: A TRACK-TBI Study</div>
-          <div class="pub-details">Gugger JJ, Narang S et al. &mdash; NeuroImage: Clinical &mdash; 2026</div>
-          <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/pii/S2213158226000628" target="_blank">ScienceDirect</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <span class="pub-num">3.</span>
-        <div class="pub-content">
-          <div class="pub-title">sEEG Network Dynamics and Cognitive Recovery in Drug-Resistant Epilepsy</div>
-          <div class="pub-details">Narang S et al. &mdash; Manuscript in preparation &mdash; Buch Lab, Stanford rNET</div>
-        </div>
-      </li>
-      <li>
-        <span class="pub-num">4.</span>
-        <div class="pub-content">
           <div class="pub-title">The Differences Between Same-Day and Staged Circumferential Fusion Surgery in Adult Spinal Deformity: Protocol for a Systematic Review</div>
           <div class="pub-details">Dagli MM, Narang S et al. &mdash; JMIR Research Protocols &mdash; 2022</div>
           <div class="pub-links">
             <a href="https://pubmed.ncbi.nlm.nih.gov/36441570/" target="_blank">PubMed</a>
             <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9745645/" target="_blank">PMC</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <span class="pub-num">5.</span>
-        <div class="pub-content">
-          <div class="pub-title">Non-invasive, neurotoxic surgery reduces seizures in a rat model of temporal lobe epilepsy</div>
-          <div class="pub-details">Zhang et al. (contributing author) &mdash; Experimental Neurology &mdash; 2021</div>
-          <div class="pub-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33991523/" target="_blank">PubMed</a>
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0014488621001679" target="_blank">ScienceDirect</a>
           </div>
         </div>
       </li>
@@ -654,15 +689,11 @@
       </li>
       <li>
         <span class="honor-year">2025</span>
-        <span class="honor-text"><strong>Queens' College Cambridge MPhil</strong> &mdash; Accepted, Brain Health and Disease</span>
-      </li>
-      <li>
-        <span class="honor-year">2025</span>
         <span class="honor-text"><strong>Distinction in Neuroscience</strong> &mdash; University of Pennsylvania &mdash; Magna Cum Laude</span>
       </li>
       <li>
         <span class="honor-year">2025</span>
-        <span class="honor-text"><strong>Penn President's Engagement Prize Finalist</strong> &mdash; Empower Through Recovery / Synaptogenesis Foundation</span>
+        <span class="honor-text"><strong>Penn President&rsquo;s Engagement Prize Finalist</strong> &mdash; Empower Through Recovery / Synaptogenesis Foundation</span>
       </li>
       <li>
         <span class="honor-year">2024</span>
@@ -745,7 +776,7 @@
     <span>
       <a href="https://shiveknarang.github.io/links.html">All Links</a>
       &nbsp;&middot;&nbsp;
-      <a href="https://shiveknarang.github.io/shivek_full_profile.html">Full Profile</a>
+      <a href="https://shiveknarang.github.io/shivek_full_profile.html">CV</a>
       &nbsp;&middot;&nbsp;
       <a href="mailto:shivekn@alumni.upenn.edu">shivekn@alumni.upenn.edu</a>
     </span>
